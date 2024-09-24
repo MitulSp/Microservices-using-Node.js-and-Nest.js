@@ -1,0 +1,9 @@
+// service-b.service.ts
+import { Injectable } from '@nestjs/common';
+
+@Injectable()
+export class ServiceBService {
+    getHello(): string {
+        return 'Hello from Service B';
+    }
+}
