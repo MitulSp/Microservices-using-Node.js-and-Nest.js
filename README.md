@@ -56,6 +56,77 @@ $ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
+
+
+Microservices Demo with Node.js and NestJS
+Project Overview
+This project demonstrates a microservice architecture using NestJS (a progressive Node.js framework). It implements three microservices:
+
+User Microservice: Manages user data (Create, Read, Update, Delete - CRUD operations).
+Product Microservice: Manages product data (CRUD operations).
+Order Microservice: Manages orders, which interact with both User and Product services.
+Each microservice communicates with the gateway via TCP transport. The gateway exposes RESTful APIs to external clients, and it forwards the requests to the respective microservice.
+
+Tech Stack
+Node.js: Runtime environment for building server-side applications.
+NestJS: Framework built on top of Node.js for creating efficient, scalable applications.
+TypeScript: Superset of JavaScript, providing static typing.
+TCP: Transport protocol for microservice-to-microservice communication.
+Microservice Architecture
+The project is structured as follows:
+
+Gateway: Acts as a reverse proxy that routes HTTP requests to the respective microservices.
+User Microservice: Handles user management (e.g., creating, retrieving, updating, and deleting users).
+Product Microservice: Manages products in the system (e.g., creating, retrieving, updating, and deleting products).
+Order Microservice: Handles order creation and management, including linking users and products.
+Each microservice runs independently and communicates with the gateway using TCP.
+
+Project Structure
+The project is divided into four main directories:
+
+bash
+Copy code
+/ecommerce-microservices/
+    ├── /gateway/
+    ├── /user-service/
+    ├── /product-service/
+    ├── /order-service/
+Microservices
+Each microservice follows a similar structure:
+
+/src/controller: Handles incoming requests or messages.
+/src/service: Contains the business logic.
+/src/main.ts: Bootstraps the microservice.
+
+# Features
+Gateway API: Exposes RESTful endpoints to handle external requests.
+User Microservice: Provides endpoints for CRUD operations on users.
+Product Microservice: Provides endpoints for CRUD operations on products.
+Order Microservice: Provides endpoints for CRUD operations on orders.
+TCP Communication: The microservices communicate with the gateway via TCP transport for better scalability and resilience.
+
+Example API Endpoints
+User Microservice:
+
+POST /users: Create a new user.
+GET /users: Retrieve all users.
+GET /users/:id: Retrieve a user by ID.
+PUT /users/:id: Update a user by ID.
+DELETE /users/:id: Delete a user by ID.
+Product Microservice:
+
+POST /products: Create a new product.
+GET /products: Retrieve all products.
+GET /products/:id: Retrieve a product by ID.
+PUT /products/:id: Update a product by ID.
+DELETE /products/:id: Delete a product by ID.
+Order Microservice:
+
+POST /orders: Create a new order.
+GET /orders: Retrieve all orders.
+GET /orders/:id: Retrieve an order by ID.
+PUT /orders/:id: Update an order by ID.
+DELETE /orders/:id: Delete an order by ID
 ```
 
 ## Resources
